@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  wordpress:
+    build: ./wordpress
+    ports:
+      - "9000:80"
+    volumes:
+      - wordpress_data:/var/www/html
+    depends_on:
+      - db
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: wordpress_db
+      WORDPRESS_DB_USER: liquizard
+      WORDPRESS_DB_PASSWORD: liquizar
+
+  db:
+    build: ./mysql
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: liquizar_root
+      MYSQL_DATABASE: wordpress_db
+      MYSQL_USER: liquizard
+      MYSQL_PASSWORD: liquizar
+
+volumes:
+  wordpress_data:
+  db_data:
