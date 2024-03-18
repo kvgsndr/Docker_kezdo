@@ -7,6 +7,9 @@ WORKDIR /usr/src/app
 # Copy package.json and package-lock.json (if available) to the working directory
 COPY package*.json ./
 
+# Set npm log level to verbose
+ENV npm_config_loglevel=verbose
+
 # Install dependencies
 RUN npm install
 
