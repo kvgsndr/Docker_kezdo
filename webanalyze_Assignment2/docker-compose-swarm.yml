@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  webanalyze-meta:
+    image: webanalyze_assignment2_webanalyze-meta_1
+    environment:
+      - WEBSITE_URL=https://meta.com
+      - LOG_PATH=/app/logs/meta/analysis.log
+    volumes:
+      - meta_logs:/app/logs/meta
+
+  webanalyze-google:
+    image: webanalyze_assignment2_webanalyze-google_1
+    environment:
+      - WEBSITE_URL=https://google.com
+      - LOG_PATH=/app/logs/google/analysis.log
+    volumes:
+      - google_logs:/app/logs/google
+
+  webanalyze-amazon:
+    image: webanalyze_assignment2_webanalyze-amazon_1
+    environment:
+      - WEBSITE_URL=https://amazon.com
+      - LOG_PATH=/app/logs/amazon/analysis.log
+    volumes:
+      - amazon_logs:/app/logs/amazon
+
+  webanalyze-apple:
+    image: webanalyze_assignment2_webanalyze-apple_1
+    environment:
+      - WEBSITE_URL=https://apple.com
+      - LOG_PATH=/app/logs/apple/analysis.log
+    volumes:
+      - apple_logs:/app/logs/apple
+
+  webanalyze-netflix:
+    image: webanalyze_assignment2_webanalyze-netflix_1
+    environment:
+      - WEBSITE_URL=https://netflix.com
+      - LOG_PATH=/app/logs/netflix/analysis.log
+    volumes:
+      - netflix_logs:/app/logs/netflix
+
+  webanalyze-happiestminds:
+    image: webanalyze_assignment2_webanalyze-happiestminds_1
+    environment:
+      - WEBSITE_URL=https://happiestminds.com
+      - LOG_PATH=/app/logs/happiestminds/analysis.log
+    volumes:
+      - happiestminds_logs:/app/logs/happiestminds
+
+volumes:
+  meta_logs:
+  google_logs:
+  amazon_logs:
+  apple_logs:
+  netflix_logs:
+  happiestminds_logs:
