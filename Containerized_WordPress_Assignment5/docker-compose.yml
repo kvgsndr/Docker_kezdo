@@ -12,18 +12,18 @@ services:
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_NAME: wordpress_db
-      WORDPRESS_DB_USER: liquizard
-      WORDPRESS_DB_PASSWORD: liquizar
+      WORDPRESS_DB_USER: wp_user
+      WORDPRESS_DB_PASSWORD: Admin1234
 
   db:
     build: ./mysql
     volumes:
       - db_data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: liquizar_root
+      MYSQL_ROOT_PASSWORD: Admin1234_root
       MYSQL_DATABASE: wordpress_db
-      MYSQL_USER: liquizard
-      MYSQL_PASSWORD: liquizar
+      MYSQL_USER: wp_user
+      MYSQL_PASSWORD: Admin1234
 
 volumes:
   wordpress_data:
